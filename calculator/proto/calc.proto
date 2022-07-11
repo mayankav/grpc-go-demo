@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package calulator;
+
+option go_package = "github.com/mayankav/grpc-go-demo/calculator/proto";
+
+message CalcRequest {
+    uint32 num1 = 1;
+    uint32 num2 = 2;
+}
+
+message CalcResponse {
+    // num1 + num2 in CalcRequest
+    uint32 result = 1;
+}
+
+service CalcService {
+    rpc Sum(CalcRequest) returns (CalcResponse);
+}
+
+// make calculator
+// make clean_calculator
+// make help

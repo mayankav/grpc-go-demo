@@ -9,7 +9,7 @@ import (
 
 // implementation of Greet RPC Api Endpoints from greet/proto/greet_grpc.pb.go
 func (s *Server) Greet(ctx context.Context, in *pb.GreetRequest) (*pb.GreetResposne, error) {
-	log.Printf("Greet function was invoked wuth %v\n", in)
+	log.Printf("Greet function was invoked with %v\n", in)
 	return &pb.GreetResposne{
 		Result: "Hello " + in.FirstName,
 	}, nil
