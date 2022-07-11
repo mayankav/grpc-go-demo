@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package greet;
+
+// to help with importing this proto file : 
+// the name of module (from go.mod) + directory in which this proto file is located
+option go_package = "github.com/mayankav/grpc-go-demo/greet/proto";
+
+message GreetRequest {
+    string first_name = 1;
+}
+
+message GreetResposne {
+    // hello + first_name in GreetRequest
+    string result = 1;
+}
+
+service GreetService {
+    rpc Greet(GreetRequest) returns (GreetResposne);
+}
+
+// protoc -I greet/proto --go_out=. --go-grpc_out=. greet/proto/greet.proto
+// protoc -I greet/proto --go_out=. --go_opt=module=github.com/mayankav/grpc-go-demo --go-grpc_out=. greet/proto/greet.proto
+// protoc -I greet/proto --go_out=. --go_opt=module=github.com/mayankav/grpc-go-demo --go-grpc_out=. --go-grpc_opt=module=github.com/mayankav/grpc-go-demo greet/proto/greet.proto
+
+// make greet
+// make clean_greet
+// make help
