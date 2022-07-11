@@ -9,6 +9,7 @@ import (
 
 func doGreet(client pb.GreetServiceClient) {
 	log.Println("doGreet was invoked..")
+	// calling the RPC endpoint
 	res, err := client.Greet(context.Background(), &pb.GreetRequest{
 		FirstName: "Mayank",
 	})
