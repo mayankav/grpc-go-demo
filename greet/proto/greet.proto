@@ -17,6 +17,8 @@ message GreetResposne {
 
 service GreetService {
     rpc Greet(GreetRequest) returns (GreetResposne);
+    // returns a stream of GreetResponse
+    rpc GreetManyTimes(GreetRequest) returns (stream GreetResposne);
 }
 
 // protoc -I greet/proto --go_out=. --go-grpc_out=. greet/proto/greet.proto

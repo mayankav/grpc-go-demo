@@ -26,4 +26,5 @@ func main() {
 
 	// from ./greet.go
 	doGreet(client)
+	doGreetManyTimes(client)
 }
